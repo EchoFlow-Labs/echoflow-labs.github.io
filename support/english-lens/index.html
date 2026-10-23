@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>English Lens Support — EchoFlow Labs</title>
-  <meta name="description" content="Help with English Lens sign-in, the Learn with EchoFlow Action extension, supported text, and troubleshooting.">
+  <meta name="description" content="Help with English Lens sign-in (Google, Apple, passkeys), account deletion, the Learn with EchoFlow Action extension, and troubleshooting.">
   <link rel="canonical" href="https://www.eflabs.tech/support/english-lens/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.eflabs.tech/support/english-lens/">
   <meta property="og:title" content="English Lens Support — EchoFlow Labs">
-  <meta property="og:description" content="Sign-in, Action extension, supported text, and troubleshooting for English Lens on iOS.">
+  <meta property="og:description" content="Sign-in options, Settings account deletion, Action extension, and troubleshooting for English Lens on iOS.">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
@@ -33,17 +33,21 @@
   <main id="main">
     <div class="container page-header">
       <h1>English Lens support</h1>
-      <p>English Lens is an iPhone app for iOS 26. App Store launch is in progress. This page covers account access, the Action extension, and common issues.</p>
+      <p>English Lens is an iPhone app for iOS 26. App Store launch is in progress. This page covers sign-in, account deletion, the Action extension, and common issues.</p>
     </div>
     <article class="container prose">
-      <h2>Sign in and password help</h2>
-      <p>English Lens uses email-based sign-in backed by <strong>Supabase</strong> for authentication. If you cannot access your account:</p>
+      <h2>Sign in and account access</h2>
+      <p>English Lens uses <strong>Supabase Auth</strong>. The sign-in screen shows <strong>Sign in with Google</strong>, <strong>Sign in with Apple</strong>, and experimental <strong>passkeys</strong>.</p>
+      <p>After you sign in successfully, the app stores session credentials in the iOS <strong>Keychain</strong> so you can stay signed in.</p>
       <ul>
-        <li>Confirm you are using the same email address you registered with.</li>
-        <li>Use the in-app password reset flow if you forgot your password.</li>
-        <li>Check spam or filtered folders for messages from the authentication provider.</li>
-        <li>If you are still locked out, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> from your registered address so we can verify ownership.</li>
+        <li><strong>Google, Apple, or passkey:</strong> Tap the method you want. If one fails, try another method, check your network connection, and confirm date and time are set automatically on your device.</li>
+        <li>If you are locked out, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> from an address tied to your account so we can help verify ownership.</li>
       </ul>
+
+      <h2>Delete your account</h2>
+      <p>Open <strong>Settings</strong> in English Lens and use account deletion to remove your <strong>Supabase</strong> account for this app.</p>
+      <p>If you used Sign in with Apple, you may also want to revoke English Lens under your Apple ID sign-in settings. Apple’s <a href="https://developer.apple.com/documentation/technotes/tn3194-handling-account-deletions-within-your-app">TN3194</a> guidance describes additional steps that can apply when disconnecting Sign in with Apple credentials.</p>
+      <p>If deletion fails or you need help, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a>.</p>
 
       <h2>Using Learn with EchoFlow</h2>
       <p>The <strong>Learn with EchoFlow</strong> Action extension appears in the share sheet <strong>actions</strong> list when a host app exports your selected <em>plain text</em> to the share sheet.</p>
@@ -77,6 +81,7 @@
         <li>Check Wi‑Fi or cellular connectivity.</li>
         <li>Ensure date and time are set automatically on your device.</li>
         <li>Force-quit and reopen the app once.</li>
+        <li>If Google, Apple, or passkey sign-in fails, try another method on the same screen or contact support after checking connectivity and device time settings.</li>
       </ul>
       <h3>Empty or unexpected results</h3>
       <ul>
@@ -86,7 +91,7 @@
       </ul>
 
       <h2>Contact</h2>
-      <p>Email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> for support, accessibility feedback, or privacy requests. See also the <a href="/privacy/english-lens/">English Lens privacy page</a>.</p>
+      <p>Email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> for support, accessibility feedback, or privacy requests. See the <a href="/privacy/english-lens/">privacy</a> and <a href="/terms/english-lens/">terms</a> pages.</p>
     </article>
   </main>
 
@@ -104,6 +109,7 @@
           <ul>
             <li><a href="/support/english-lens/" aria-current="page">English Lens support</a></li>
             <li><a href="/privacy/english-lens/">English Lens privacy</a></li>
+            <li><a href="/terms/english-lens/">English Lens terms</a></li>
           </ul>
         </nav>
         <nav class="footer__nav" aria-label="Company links">

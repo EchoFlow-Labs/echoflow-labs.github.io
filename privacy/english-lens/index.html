@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>English Lens Privacy — EchoFlow Labs</title>
-  <meta name="description" content="How English Lens handles account data, shared text, backend processing, caching, and deletion requests.">
+  <meta name="description" content="How English Lens handles Supabase sign-in (Google, Apple, passkeys), shared text, backend processing, caching, and account deletion.">
   <link rel="canonical" href="https://www.eflabs.tech/privacy/english-lens/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.eflabs.tech/privacy/english-lens/">
   <meta property="og:title" content="English Lens Privacy — EchoFlow Labs">
-  <meta property="og:description" content="Privacy practices for English Lens on iOS: auth, processing, caching, and your choices.">
+  <meta property="og:description" content="Privacy for English Lens: Supabase Auth sign-in options, processing, caching, and in-app account deletion.">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
@@ -33,14 +33,16 @@
   <main id="main">
     <div class="container page-header">
       <h1>English Lens privacy</h1>
-      <p>Last updated: October 22, 2026. This page describes how English Lens handles information as of the date above. It is not legal advice.</p>
+      <p>Last updated: October 23, 2026. This page describes how English Lens handles information as of the date above. It is not legal advice.</p>
     </div>
     <article class="container prose">
       <h2>Scope</h2>
       <p>This policy applies to the English Lens iPhone app and the EchoFlow services that process text you submit through the app or the <strong>Learn with EchoFlow</strong> Action extension.</p>
 
       <h2>Account and authentication</h2>
-      <p><strong>Supabase</strong> provides email-based authentication for English Lens. Supabase stores your account email and authentication tokens needed to sign you in. EchoFlow Labs does not operate a separate password database for this flow.</p>
+      <p>English Lens uses <strong>Supabase Auth</strong> for sign-in. The app offers <strong>Sign in with Google</strong>, <strong>Sign in with Apple</strong>, and experimental <strong>passkeys</strong> on the sign-in screen. Sign-in can still fail because of network issues, third-party provider outages, device settings, or passkey limitations.</p>
+      <p>After a successful sign-in, the app bridges session credentials to the iOS <strong>Keychain</strong> so you can stay signed in across launches. Supabase stores account identifiers and authentication tokens needed for your account. EchoFlow Labs does not operate a separate password database.</p>
+      <p>When you use Google or Apple sign-in, those providers handle authentication under their policies; we receive the account information Supabase needs to authenticate you.</p>
 
       <h2>Text you submit</h2>
       <p>When you share, paste, or type text in English Lens, that <strong>selected user content</strong> is sent to the EchoFlow backend and to a <strong>large language model (LLM)</strong> to generate translation, explanations, and retelling results. Processing is tied to your request—not to build a browsable history inside the app.</p>
@@ -66,8 +68,11 @@
       </ul>
 
       <h2>Retention and deletion</h2>
-      <p>Cached results in Redis expire within the window described above or sooner when evicted. Authentication data is retained as long as your account exists unless you ask us to delete it.</p>
-      <p>To request account deletion or ask questions about data we hold, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a>. We will verify requests using reasonable means (for example, your registered email).</p>
+      <p>Cached results in Redis expire within the window described above or sooner when evicted.</p>
+      <p>You can delete your English Lens account in the app under <strong>Settings</strong>. That flow removes your <strong>Supabase Auth</strong> account and the operational app account data we control through it.</p>
+      <p>To finish deletion reliably and retry failed deletion steps, we retain a <strong>minimal deletion-safety record</strong> on our backend, keyed to your former Supabase user identifier. It holds when deletion was requested and a brief summary of Sign in with Apple revocation status where applicable. We consult this record during <strong>Sign in with Apple credential registration</strong> so a deleted account cannot complete late Apple registration against that same deleted user identifier. It does not prevent creating a <strong>new</strong> Supabase account with a new user identifier through Google, Apple, or passkeys. We keep this record indefinitely for those safety and operations purposes; it is not used for advertising, profiling, or in-app features.</p>
+      <p>If you used Sign in with Apple, you may also need to revoke the app’s access in your Apple ID settings or follow Apple’s account-management steps where applicable (including guidance such as Apple’s <a href="https://developer.apple.com/documentation/technotes/tn3194-handling-account-deletions-within-your-app">TN3194</a> on handling account deletions) to fully disconnect the Apple credential.</p>
+      <p>For questions about data we hold, or if you cannot complete in-app deletion, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a>. See also our <a href="/terms/english-lens/">terms of service</a>.</p>
 
 
       <h2>Changes</h2>
@@ -92,6 +97,7 @@
           <ul>
             <li><a href="/support/english-lens/">English Lens support</a></li>
             <li><a href="/privacy/english-lens/" aria-current="page">English Lens privacy</a></li>
+            <li><a href="/terms/english-lens/">English Lens terms</a></li>
           </ul>
         </nav>
         <nav class="footer__nav" aria-label="Company links">
