@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Lens Support — EchoFlow Labs</title>
+  <meta name="description" content="Help with English Lens sign-in, the Learn with EchoFlow Action extension, supported text, and troubleshooting.">
+  <link rel="canonical" href="https://www.eflabs.tech/support/english-lens/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.eflabs.tech/support/english-lens/">
+  <meta property="og:title" content="English Lens Support — EchoFlow Labs">
+  <meta property="og:description" content="Sign-in, Action extension, supported text, and troubleshooting for English Lens on iOS.">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/app-icon-1024.webp" width="32" height="32" alt="">
+        EchoFlow Labs
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/privacy/english-lens/">Privacy</a>
+        <a href="mailto:harvey@eflabs.tech">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-header">
+      <h1>English Lens support</h1>
+      <p>English Lens is an iPhone app for iOS 26. App Store launch is in progress. This page covers account access, the Action extension, and common issues.</p>
+    </div>
+    <article class="container prose">
+      <h2>Sign in and password help</h2>
+      <p>English Lens uses email-based sign-in backed by <strong>Supabase</strong> for authentication. If you cannot access your account:</p>
+      <ul>
+        <li>Confirm you are using the same email address you registered with.</li>
+        <li>Use the in-app password reset flow if you forgot your password.</li>
+        <li>Check spam or filtered folders for messages from the authentication provider.</li>
+        <li>If you are still locked out, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> from your registered address so we can verify ownership.</li>
+      </ul>
+
+      <h2>Using Learn with EchoFlow</h2>
+      <p>The <strong>Learn with EchoFlow</strong> Action extension appears in the share sheet <strong>actions</strong> list when a host app exports your selected <em>plain text</em> to the share sheet.</p>
+      <ol>
+        <li>Select the English text you want help with (not the whole screen unless the app exports selection as text).</li>
+        <li>Tap <strong>Share</strong>.</li>
+        <li>In the actions area, choose <strong>Learn with EchoFlow</strong>. If it is missing, tap <strong>Edit Actions</strong> and enable it.</li>
+        <li>English Lens opens with your shared text ready to process.</li>
+      </ol>
+      <p>English Lens does <strong>not</strong> add a first-level item to other apps’ text editing menus, and it cannot read content you have not shared.</p>
+
+      <h2>Paste or type in the main app</h2>
+      <p>Open English Lens directly to paste or type English text when sharing is inconvenient. The same processing pipeline applies as for shared text.</p>
+
+      <h2>Supported text behavior</h2>
+      <ul>
+        <li>Input should be <strong>plain English text</strong>. Rich formatting, attachments, or non-text shares may fail or be stripped.</li>
+        <li>Very long passages may take longer or hit service limits; try shorter selections if results fail.</li>
+        <li>Results include Chinese translation, sentence-level explanations, and a spoken retelling where enabled in the app.</li>
+      </ul>
+
+      <h2>Troubleshooting</h2>
+      <h3>Learn with EchoFlow is missing from the share sheet</h3>
+      <ul>
+        <li>After English Lens is installed on your device, try sharing again from a host app that provides selected plain text.</li>
+        <li>In the share sheet, tap <strong>Edit Actions</strong> and add or enable Learn with EchoFlow.</li>
+        <li>Some apps only export a link or image—English Lens needs selectable text.</li>
+      </ul>
+      <h3>Sign-in errors or network failures</h3>
+      <ul>
+        <li>Check Wi‑Fi or cellular connectivity.</li>
+        <li>Ensure date and time are set automatically on your device.</li>
+        <li>Force-quit and reopen the app once.</li>
+      </ul>
+      <h3>Empty or unexpected results</h3>
+      <ul>
+        <li>Confirm the shared snippet is English plain text.</li>
+        <li>Retry with a shorter selection.</li>
+        <li>If the problem persists, email support with your iOS version and a description of what you shared (not the full private text unless you choose to).</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a> for support, accessibility feedback, or privacy requests. See also the <a href="/privacy/english-lens/">English Lens privacy page</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="/">
+            <img src="/assets/images/app-icon-1024.webp" width="32" height="32" alt="">
+            EchoFlow Labs
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Product links">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="/support/english-lens/" aria-current="page">English Lens support</a></li>
+            <li><a href="/privacy/english-lens/">English Lens privacy</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Company links">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer__meta">&copy; 2026 EchoFlow Labs.</p>
+    </div>
+  </footer>
+</body>
+</html>

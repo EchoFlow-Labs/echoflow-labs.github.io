@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Lens Privacy — EchoFlow Labs</title>
+  <meta name="description" content="How English Lens handles account data, shared text, backend processing, caching, and deletion requests.">
+  <link rel="canonical" href="https://www.eflabs.tech/privacy/english-lens/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.eflabs.tech/privacy/english-lens/">
+  <meta property="og:title" content="English Lens Privacy — EchoFlow Labs">
+  <meta property="og:description" content="Privacy practices for English Lens on iOS: auth, processing, caching, and your choices.">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/app-icon-1024.webp" width="32" height="32" alt="">
+        EchoFlow Labs
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/support/english-lens/">Support</a>
+        <a href="mailto:harvey@eflabs.tech">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-header">
+      <h1>English Lens privacy</h1>
+      <p>Last updated: October 22, 2026. This page describes how English Lens handles information as of the date above. It is not legal advice.</p>
+    </div>
+    <article class="container prose">
+      <h2>Scope</h2>
+      <p>This policy applies to the English Lens iPhone app and the EchoFlow services that process text you submit through the app or the <strong>Learn with EchoFlow</strong> Action extension.</p>
+
+      <h2>Account and authentication</h2>
+      <p><strong>Supabase</strong> provides email-based authentication for English Lens. Supabase stores your account email and authentication tokens needed to sign you in. EchoFlow Labs does not operate a separate password database for this flow.</p>
+
+      <h2>Text you submit</h2>
+      <p>When you share, paste, or type text in English Lens, that <strong>selected user content</strong> is sent to the EchoFlow backend and to a <strong>large language model (LLM)</strong> to generate translation, explanations, and retelling results. Processing is tied to your request—not to build a browsable history inside the app.</p>
+      <p>English Lens does not read text from other apps unless you explicitly share or enter it.</p>
+
+      <h2>On your device</h2>
+      <ul>
+        <li>The iOS client does <strong>not</strong> store a local history of past prompts or results.</li>
+        <li>Source text is <strong>not</strong> placed in ordinary logs, analytics payloads, or crash metadata.</li>
+      </ul>
+
+      <h2>On our servers</h2>
+      <ul>
+        <li>The backend may cache a <strong>normalized, validated result</strong> in <strong>Redis</strong> for up to <strong>seven days</strong>, subject to eviction for cost or latency. This cache is operational—not a user-visible history feature.</li>
+        <li>A <strong>usage ledger</strong> in the database stores aggregate identifiers such as token counts, cost figures, and request identifiers. It does <strong>not</strong> store full prompt or result text in that ledger.</li>
+      </ul>
+
+      <h2>What we do not do</h2>
+      <ul>
+        <li>We do <strong>not</strong> sell your personal information.</li>
+        <li>We do <strong>not</strong> use English Lens for advertising or cross-app tracking.</li>
+        <li>This site does not use analytics or advertising cookies.</li>
+      </ul>
+
+      <h2>Retention and deletion</h2>
+      <p>Cached results in Redis expire within the window described above or sooner when evicted. Authentication data is retained as long as your account exists unless you ask us to delete it.</p>
+      <p>To request account deletion or ask questions about data we hold, email <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a>. We will verify requests using reasonable means (for example, your registered email).</p>
+
+
+      <h2>Changes</h2>
+      <p>We may update this page when practices change. Material updates will be reflected here with a revised date.</p>
+
+      <h2>Contact</h2>
+      <p>EchoFlow Labs — <a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="/">
+            <img src="/assets/images/app-icon-1024.webp" width="32" height="32" alt="">
+            EchoFlow Labs
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Product links">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="/support/english-lens/">English Lens support</a></li>
+            <li><a href="/privacy/english-lens/" aria-current="page">English Lens privacy</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Company links">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="mailto:harvey@eflabs.tech">harvey@eflabs.tech</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer__meta">&copy; 2026 EchoFlow Labs.</p>
+    </div>
+  </footer>
+</body>
+</html>
