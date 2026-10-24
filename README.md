@@ -1,11 +1,12 @@
 # EchoFlow Labs — Public Site
 
-Production static landing site for [EchoFlow Labs](https://www.eflabs.tech/). Hosted on **GitHub Pages** from this repository root (no build step).
+Production static landing site for [EchoFlow Labs](https://www.eflabs.tech/). Hosted on **GitHub Pages** from this repository root. **CSS** is built with Tailwind v4 + [shadcn/ui](https://ui.shadcn.com/) theme tokens (`components.json`, `src/styles/globals.css`); HTML stays static (no client JS).
 
 ## Local development
 
 ```bash
 cd /path/to/echoflow-labs.github.io
+npm ci && npm run build   # writes assets/css/site.css
 python3 -m http.server 8080
 # Open http://127.0.0.1:8080/
 ```
@@ -30,8 +31,11 @@ chmod +x scripts/validate-site.sh
 | `CNAME` | Custom domain for Pages |
 | `robots.txt`, `sitemap.xml` | SEO |
 | `design-system/MASTER.md` | Design system source of truth |
+| `DESIGN.md` | Brand direction (getdesign / Voltagent-inspired) |
+| `components.json` | shadcn/ui project config |
+| `src/styles/` | CSS source (build → `assets/css/site.css`) |
 
-No JavaScript runtime dependencies, no CMS, no backend calls, no analytics on the marketing site.
+No client-side JavaScript on the marketing site, no CMS, no backend calls, no analytics.
 
 ## DNS and GitHub Pages settings
 

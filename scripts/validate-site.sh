@@ -205,7 +205,7 @@ fi
 ok "repository hygiene and copy accuracy"
 
 # Mobile header layout contract (CSS structure, not pixel fixtures)
-grep -q 'max-width: 700px' "$css" || fail "missing <=700px header breakpoint in site.css"
+grep -qE 'max-width:\s*700px' "$css" || fail "missing <=700px header breakpoint in site.css"
 grep -q 'grid-template-columns' "$css" || fail "missing mobile nav grid in site.css"
 grep -q 'brand__name' "$css" || fail "missing single-line brand helper in site.css"
 if grep -E '\.nav[^{]*\{[^}]*nowrap' "$css" 2>/dev/null; then

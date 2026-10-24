@@ -1,0 +1,14 @@
+{
+  "name": "echoflow-labs-site",
+  "private": true,
+  "description": "Static GitHub Pages site — CSS built from Tailwind + shadcn theme tokens",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/globals.css -o ./assets/css/site.css --minify",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.5"
+  }
+}
