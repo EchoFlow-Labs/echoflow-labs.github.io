@@ -9,6 +9,7 @@ Canonical visual and content rules for the static site at `https://www.eflabs.te
 - Supporting idea: understand what you read and hear without breaking rhythm.
 - Honest product status only; no fake metrics, ratings, testimonials, or App Store links until real.
 - Approved English Lens status copy: **App Store launch is in progress** (not “submission”, not implying public download today).
+- Visual world: **Voltagent-inspired** dark canvas + electric emerald accent — see root `DESIGN.md` and shadcn CSS variables in `src/styles/globals.css`.
 
 ## Color tokens
 
@@ -16,11 +17,11 @@ Canonical visual and content rules for the static site at `https://www.eflabs.te
 
 | Token | Hex | Role |
 |-------|-----|------|
-| Indigo 600 `#4f46e5` | Primary button fill | CTAs |
-| Indigo 700 `#4338ca` | Button hover | — |
-| Mint 400 `#5eead4` | Launch badge fill, listening visual | Progress |
+| Primary `#00d992` | Primary button fill (shadcn `--primary`) | CTAs |
+| Primary deep `#10b981` | Button hover | — |
+| Accent `#2fd6a1` | Links, eyebrows, icons | Brand glow |
 | Warm 400 `#f59e0b` | In-development badge fill | Accent wash |
-| Navy 950 `#0b1220` | Dark surfaces | Depth |
+| Canvas `#101010` | Page background | Depth |
 
 ### Semantic contrast (body text, UI chrome)
 
